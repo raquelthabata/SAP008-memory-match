@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Memory Match</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory match</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="login.css">
+    <script defer src="/login.js"></script>
+    <!--
+        o atributo defer serve para adiar o processamento do script, mas ele vai carregar todo html antes
+    -->
+
+</head>
+<body>
+   <form class="login_form">
+    <divn class="login_header">
+        <img src="/imagens/pokemon.png" alt="">
+        <h1>Pokemon Memory</h1>
+    </div>
+    <!--Aqui o botão está disabilitado com "disabled" para que ele só habilite quando a pessoa preencher o nome no input, terá um estilo só para quando ele estiver desabilitado -->
+    <input type="text" placeholder="Name" class="login_input">
+    <button type="submit" class="login_button" href="/#play" disabled>Play</button>
+   </form>
+</body>
 </html>
+ 
