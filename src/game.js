@@ -2,14 +2,15 @@
 import data from './data/pokemon/pokemon.js'
 
 const pokemons = data.items;
-
+let cardHtml = '';
 const gerarImg = (objeto)=>{
     objeto.forEach((objeto)=>{
-        objeto.image
+        objeto.image 
     })
 }
 
 gerarImg(pokemons)
+
 
 
 
