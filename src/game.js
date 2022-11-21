@@ -10,7 +10,15 @@ const gerarImg = (objeto)=>{
 }
 
 gerarImg(pokemons)
-
+//primeiro a gente precisa criar toda a estrutura doq está no html para aparecer nossa carta, que é a seguinte: 
+ /*
+ <div class="grid">
+      <div class="card">
+      <div class=" face front"></div>
+      <div class="face back"></div>
+    </div>
+  </div>
+*/
 
 
 
