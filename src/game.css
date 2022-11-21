@@ -57,7 +57,7 @@ header{
 /*o transform: rotateY(180deg) foi aplicado aqui pq a imagem está invertida, para ficar na posição correta, sem espelhamento*/
 
 .back {
-    background-image: url(/imagens/back.jpg);
+    background-image: url(/SAP008-memory-match/src/imagens/back.jpg);
     backface-visibility: hidden;
 }
 

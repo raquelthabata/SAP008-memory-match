@@ -55,7 +55,7 @@ const createCard = () => {
 
 }
 
-
+createCard()
 
 
 
