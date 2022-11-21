@@ -1,14 +1,23 @@
 
 import pokemon from './data/pokemon/pokemon.js'
-import data from './data/pokemon/pokemon.js'
+/*import data from './data/pokemon/pokemon.js'
 
 let pokemons = data.items
-console.log(pokemons)
+
+/*pokemons.forEach((pokemon)=>{console.log(pokemon.image)})
 
 
-pokemons.forEach((pokemon)=>{
-    console.log(pokemon.id)
-})
+
+
+const gerarImg = (objeto)=>{
+    objeto.forEach((objeto)=>{
+        console.log(objeto.image);
+    })
+}
+
+
+gerarImg(pokemons)
+
 
 
 //tenho que entrar primeiro no array dp no objeto

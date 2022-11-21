@@ -1,24 +1,16 @@
+
 import data from './data/pokemon/pokemon.js'
-const pokemons = data.items
 
-pokemons.forEach((pokemon)=>{
-    return pokemon.id
-})
+const pokemons = data.items;
 
+const gerarImg = (objeto)=>{
+    objeto.forEach((objeto)=>{
+        objeto.image
+    })
+}
 
-/*const pokemons = [
+gerarImg(pokemons)
 
-    'bulbasaur',
-    'ivysaur',
-    'venusaur',
-    'charmander',
-    'charmeleon',
-    'charizard',
-    'squirtle',
-    'wartortle',
-    'blastoise'
-
-]*/
 
 const grid = document.querySelector('.grid'); //onde será criado os cards
 
@@ -91,7 +83,7 @@ const createCard = (pokemonName) => {
     const front = createElements('div', ' face front');
     const back = createElements('div', ' face back');
 
-    front.style.backgroundImage = `url('../imagens/${pokemonName}.png')`
+    front.style.backgroundImage = gerarImg(pokemons);
 
     card.appendChild(front);
     card.appendChild(back);
@@ -126,4 +118,4 @@ window.onload = () =>{
     spanPlayer.innerHTML = playerName;
     startTimer()
     loadGame()
-}
+};
