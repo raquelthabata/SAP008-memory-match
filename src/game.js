@@ -29,7 +29,8 @@ const grid = document.querySelector('.grid');
 //1.2 função parar criar o card
 //método .createElements(recebe a tag do elemento que quero criar) para criar um elemento HTML
 //método .className para criar uma classe e nome para o elemento que criamos
-/*
+//método .appendChild(elemento que vai receber) adiciona um filho a um elemento no HTML
+
 
 const createCard = () => {
     const card = document.createElement('div');
@@ -40,15 +41,26 @@ const createCard = () => {
     front.className = 'face front';
     back.className = 'face back';
 
-    *até aqui eles foram criados porém estão separados
+    //até aqui eles foram criados porém estão separados, precisamos colocar dentro da div card, para isso utilizamos o método .appendChild(aqui dentro o elemento que criamos)
+
+    card.appendChild(front);
+    card.appendChild(back);
+
+    //agora precisamos adicionar dentro da div grid, então utilizamos o mesmo método appendChild
+
+    grid.appendChild(card);
+
+    //o grid vai receber o card já com os filhos dele dentro, que são o front e o back
+
+
 }
 
 
-*/
 
 
 
-const createCard = (pokemonName) => {
+
+/*const createCard = (pokemonName) => {
     const card = createElements('div', 'card');
     const front = createElements('div', ' face front');
     const back = createElements('div', ' face back');
