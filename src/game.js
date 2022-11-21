@@ -12,7 +12,10 @@ const gerarImg = (objeto)=>{
 gerarImg(pokemons)
 
 
-const grid = document.querySelector('.grid'); //onde será criado os cards
+
+
+
+/*const grid = document.querySelector('.grid'); //onde será criado os cards
 
 const spanPlayer = document.querySelector ('.player'); // onde será o nome do jogador 
 
@@ -119,3 +122,4 @@ window.onload = () =>{
     startTimer()
     loadGame()
 };
+*/
