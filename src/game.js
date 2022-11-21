@@ -27,6 +27,27 @@ gerarImg(pokemons)
 const grid = document.querySelector('.grid'); 
 
 //1.2 função parar criar o card
+//método .createElements(recebe a tag do elemento que quero criar) para criar um elemento HTML
+//método .className para criar uma classe e nome para o elemento que criamos
+/*
+
+const createCard = () => {
+    const card = document.createElement('div');
+    const front = document.createElement('div');
+    const back = document.createElement('div');
+
+    card.className = 'card';
+    front.className = 'face front';
+    back.className = 'face back';
+
+    *até aqui eles foram criados porém estão separados
+}
+
+
+*/
+
+
+
 const createCard = (pokemonName) => {
     const card = createElements('div', 'card');
     const front = createElements('div', ' face front');
