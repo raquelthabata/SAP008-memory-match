@@ -10,7 +10,10 @@ const gerarImg = (objeto)=>{
 }
 
 gerarImg(pokemons)
-//primeiro a gente precisa criar toda a estrutura doq está no html para aparecer nossa carta, que é a seguinte: 
+
+
+
+//1: a gente precisa criar toda a estrutura doq está no html para aparecer nossa carta, quem vai criar essa estrutura é função que irei criar
  /*
  <div class="grid">
       <div class="card">
@@ -20,17 +23,63 @@ gerarImg(pokemons)
   </div>
 */
 
+//1.1 selecionei onde será criado os cards que no caso é na div grid lá no html
+const grid = document.querySelector('.grid'); 
+
+//1.2 função parar criar o card
+const createCard = (pokemonName) => {
+    const card = createElements('div', 'card');
+    const front = createElements('div', ' face front');
+    const back = createElements('div', ' face back');
+
+    front.style.backgroundImage = gerarImg(pokemons);
+
+    card.appendChild(front);
+    card.appendChild(back);
+
+    card.addEventListener('click', revealCard);
+    card.setAttribute('data-pokemonName', pokemonName);
+
+    return card;
+
+}
 
 
 
 
-/*const grid = document.querySelector('.grid'); //onde será criado os cards
 
-const spanPlayer = document.querySelector ('.player'); // onde será o nome do jogador 
 
-const time = document.querySelector('.timer') // onde aparecerá o tempo de jogo
 
-const createElements = (tag, nameOfClass) => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const spanPlayer = document.querySelector ('.player'); // onde será o nome do jogador 
+
+const time = document.querySelector('.timer') // onde aparecerá o tempo de jogo*/
+
+
+
+
+
+
+/*const createElements = (tag, nameOfClass) => {
     const element = document.createElement(tag);
     element.className = nameOfClass;
     return element;
@@ -90,22 +139,7 @@ const revealCard = ({ target }) => {
         checkCards()
     }
 }
-const createCard = (pokemonName) => {
-    const card = createElements('div', 'card');
-    const front = createElements('div', ' face front');
-    const back = createElements('div', ' face back');
 
-    front.style.backgroundImage = gerarImg(pokemons);
-
-    card.appendChild(front);
-    card.appendChild(back);
-
-    card.addEventListener('click', revealCard);
-    card.setAttribute('data-pokemonName', pokemonName);
-
-    return card;
-
-}
 
 const loadGame = () => {
     const duplicatePokemons = [...pokemons, ...pokemons];
