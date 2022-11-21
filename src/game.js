@@ -1,4 +1,12 @@
-const pokemons = [
+import data from './data/pokemon/pokemon.js'
+const pokemons = data.items
+
+pokemons.forEach((pokemon)=>{
+    return pokemon.id
+})
+
+
+/*const pokemons = [
 
     'bulbasaur',
     'ivysaur',
@@ -10,13 +18,13 @@ const pokemons = [
     'wartortle',
     'blastoise'
 
-]
+]*/
 
-const grid = document.querySelector('.grid');
+const grid = document.querySelector('.grid'); //onde será criado os cards
 
-const spanPlayer = document.querySelector ('.player');
+const spanPlayer = document.querySelector ('.player'); // onde será o nome do jogador 
 
-const time = document.querySelector('.timer')
+const time = document.querySelector('.timer') // onde aparecerá o tempo de jogo
 
 const createElements = (tag, nameOfClass) => {
     const element = document.createElement(tag);
