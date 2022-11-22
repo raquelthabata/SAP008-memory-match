@@ -1,4 +1,4 @@
-main{
+/*main{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -20,7 +20,7 @@ header{
     border-radius: 5px;
     border: solid 1px rgb(16, 167, 255);}
 
-
+*/
 .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -37,6 +37,7 @@ header{
     position: relative;
     transition: all 400ms ease;
     transform-style: preserve-3d;
+    background-color: blueviolet;
     
 }
 
@@ -52,15 +53,21 @@ header{
 }
 
 .front {
+    background-color: blueviolet;
     transform: rotateY(180deg);
 }
 /*o transform: rotateY(180deg) foi aplicado aqui pq a imagem está invertida, para ficar na posição correta, sem espelhamento*/
 
 .back {
-   
+   background-image: url(/SAP008-memory-match/src/imagens/back.jpg);
     backface-visibility: hidden;
 }
 
+.card:hover{
+transform: rotateY(180deg);
+}
+
+/*
 .reveal-card{
     transform: rotateY(180deg);
 }
@@ -68,4 +75,4 @@ header{
 .disabled-card{
     filter:saturate(0.5);
     opacity: 0.5;
-}
+}*/
