@@ -7,9 +7,9 @@ import data from './data/pokemon/pokemon.js'
 //por fim retorna a constante que recebe um array com todas url das imagens
 
 
-const gerarImg = (objeto)=>{
+const gerarImg = (objeto) => {
     const imgItems = [];
-    objeto.forEach((items)=>{
+    objeto.forEach((items) => {
         imgItems.push(items.image)
 
     })
@@ -21,18 +21,18 @@ const pokemonsImages = gerarImg(data.items)
 //criei uma constante para guardar o resultado das imagens que veio através da execução da função
 
 //1: a gente precisa criar toda a estrutura doq está no html para aparecer nossa carta, quem vai criar essa estrutura é função que irei criar
- /*
- <div class="grid">
-      <div class="card">
-      <div class=" face front"></div>
-      <div class="face back"></div>
-    </div>
-  </div>
+/*
+<div class="grid">
+     <div class="card">
+     <div class=" face front"></div>
+     <div class="face back"></div>
+   </div>
+ </div>
 */
 
 //1.1 selecionei onde será criado os cards que no caso é na div grid lá no html
 
-const grid = document.querySelector('.grid'); 
+const grid = document.querySelector('.grid');
 
 //1.2 função parar criar o card
 //método .createElements(recebe a tag do elemento que quero criar) para criar um elemento HTML
@@ -69,19 +69,46 @@ createCard()
 
 //1.3 na função acima criei fiz muitas repetições de códigos , para facilitar, vou criar uma função para criar os elementos
 
-const createElements = (tag, nameOfClass)=>{
+const createElements = (tag, nameOfClass) => {
     const element = document.createElement(tag);
     element.className = nameOfClass;
     return element;
 }
- //essa função está recebendo como parametro o nome da tag e o nome da classe que queremos criar 
- // criei uma constante chamada elemento que vai receber o método document.creatElements, o elemento que ela vai criar passamos através da tag que é o parametro colocado na função
- //em seguida peguei o elemento e adicionei através do método className a classe que ele irá criar, e o nome dessa classe será o parametro que a função irá receber
- //por fim é retornado o elemento pronto 
+//essa função está recebendo como parametro o nome da tag e o nome da classe que queremos criar 
+// criei uma constante chamada elemento que vai receber o método document.creatElements, o elemento que ela vai criar passamos através da tag que é o parametro colocado na função
+//em seguida peguei o elemento e adicionei através do método className a classe que ele irá criar, e o nome dessa classe será o parametro que a função irá receber
+//por fim é retornado o elemento pronto 
 
- //1.4 agora reaproveitando a função de criar elemento para a função de criar o card, ela ficará assim:
+//1.4 agora reaproveitando a função de criar elemento para a função de criar o card, ela ficará assim:
+//1.5 criando a função revelCard para que ela possa ser executada no evento de click
+//target para recuperar o elemento que foi clicado
+//posso adicionar o parentNode para recuperar o pai do elemento clicado
+//através do classList e o add adicionamos uma nova classe a esse elemento pai que será a classe no css que irá revelar a carta com o click
+//cliquei na primeira carta vou guardar na varivel firstCard cliquei na segunda guardo no secondCard, para poder comparar as duas e vê se são iguais
+let firstCard = '';
+let secondCard = '';
 
- const createCard = (pokemon) => {
+const revealCard = ({ target }) => {
+    if (target.parentNode.className.includes('reveal-card')) {
+        return; //se o target já tiver uma classe com o nome reveal-card ele vai bater no return e vai pro fim da função, não vai fazer nada
+    }
+
+    if (firstCard === '') {
+        target.parentNode.classList.add('reveal-card')
+        firstCard = target.parentNode;
+    } //se a varivel for vazia, eu adiciono a classe de revelar a carta e salvo esse valor na varivel
+    else if (secondCard === '') {
+        target.parentNode.classList.add('reveal-card')
+        secondCard = target.parentNode;
+    } //mesma coisa aqui
+
+     
+
+
+
+}
+
+const createCard = (pokemon) => {
     const card = createElements('div', 'card');
     const front = createElements('div', ' face front');
     const back = createElements('div', ' face back');
@@ -90,6 +117,9 @@ const createElements = (tag, nameOfClass)=>{
 
     card.appendChild(front);
     card.appendChild(back);
+
+    card.addEventListener('click', revealCard);
+    //evento de click adicionado para a carta virar quando clicar e mostrar o outro lado e a função que será executada se chama revealCard. Explicando no item 4
 
     return card;
 
@@ -124,17 +154,19 @@ loadGame() */
 //a constante tem os mesmo elementos do array de pokemonsImages, porém eles estão espalhados.
 //e no lugar da constante pokemonsImages eu substituo pela nova constante com o array duplicado
 //porém eles estão na mesma ordem, para consertar isso utilizei o método sort para embaralhar o array, ele ordena em ordem alfabética, porém ele também recebe uma função dentro dele para determinar como quero essa ordenação
-//utilizei o metodo Match.random como retorno para função do sort, pois ele gera um número aletório, subtrai por 0.5 para que ele não fique sempre com o mesmo padrão, pois o sort precisa receber um número maior ou menor que 0
+//utilizei o metodo Match.random como retorno para função do sort, pois ele gera um número aletório, subtrai por 0.5 para que ele não fique sempre com o mesmo padrão, pois o sort precisa receber um número maior ou menor que 0, vai retornar um número negativo ou positivo aleatoriamente
 
 
 const loadGame = () => {
-    const duplicatePokemons = [...pokemonsImages, ...pokemonsImages].sort(()=>{
+    const duplicatePokemons = [...pokemonsImages, ...pokemonsImages].sort(() => {
         return Math.random() - 0.5
-    }) 
+    })
 
-    duplicatePokemons.forEach((pokemon)=>{
-       const card = createCard(pokemon);
-       grid.appendChild(card);
+    duplicatePokemons.forEach((pokemon) => {
+        const card = createCard(pokemon);
+        grid.appendChild(card);
     });
-   }
-   loadGame()
+}
+loadGame()
+
+   //4: adicionar um evento de escuta nas cartas, para que elas virem quando clicar. Como já estou criando as cartas na função createCard, adicionei o evento diretamente lá

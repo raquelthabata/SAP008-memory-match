@@ -63,11 +63,6 @@ header{
     backface-visibility: hidden;
 }
 
-.card:hover{
-transform: rotateY(180deg);
-}
-
-/*
 .reveal-card{
     transform: rotateY(180deg);
 }
@@ -75,4 +70,4 @@ transform: rotateY(180deg);
 .disabled-card{
     filter:saturate(0.5);
     opacity: 0.5;
-}*/
+}
