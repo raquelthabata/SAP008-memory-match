@@ -97,13 +97,14 @@ const createElements = (tag, nameOfClass)=>{
 //na constante card, front e back que criei ao invés de utilizar o método createElements, chamo a função que criei que é para criar os elementos e passamos os dois parametros que ela recebe, o nome da tag, ex: div e o nome da classe, ex: card
 //depois é adicionado normalmente as tags front back como filhos da tag card 
 //por fim retornado o card
-
-
-//chamando a função
 //essa função é somente para criar a carta
 
 //2: preciso criar uma função para carregar o jogo
 
+
+//2: criar uma função para carregar o jogo
+//a função contém a constante com o array de imagens e nela é passado um forEach para cada imagem dentro do array crio uma constante chamada card que recebe a função de criar card com o parametro pokemon que é cada imagem
+//por fim adiciono a constante card como filho da div grid
 
 const loadGame = () => {
  pokemonsImages.forEach((pokemon)=>{
@@ -113,3 +114,4 @@ const loadGame = () => {
 }
 
 loadGame()
+//chamando a função de carregar o jogo
