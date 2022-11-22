@@ -95,6 +95,7 @@ const createElements = (tag, nameOfClass)=>{
 
 }
 //na constante card, front e back que criei ao invés de utilizar o método createElements, chamo a função que criei que é para criar os elementos e passamos os dois parametros que ela recebe, o nome da tag, ex: div e o nome da classe, ex: card
+//adicionei a imagem que será adicionada no backgroundImage da div front e utilizei o templatestring para inserir a variavel com a url das imagens
 //depois é adicionado normalmente as tags front back como filhos da tag card 
 //por fim retornado o card
 //essa função é somente para criar a carta
@@ -106,12 +107,34 @@ const createElements = (tag, nameOfClass)=>{
 //a função contém a constante com o array de imagens e nela é passado um forEach para cada imagem dentro do array crio uma constante chamada card que recebe a função de criar card com o parametro pokemon que é cada imagem
 //por fim adiciono a constante card como filho da div grid
 
-const loadGame = () => {
+/*const loadGame = () => {
  pokemonsImages.forEach((pokemon)=>{
     const card = createCard(pokemon);
     grid.appendChild(card);
  });
 }
 
-loadGame()
+loadGame() */
 //chamando a função de carregar o jogo
+
+//3: duplicar o array na função acima, para que haja um par de cada imagem
+//criei uma constante que vai receber o array duplicado
+//preciso pegar os elementos do array de imagens e espalhar, para isso utilizei um operador de espalhamento, que espalha um array dentro de outro, que é, colocar 3 pontos ... e colocar o array
+//como quero que seja duplicado, adicionei o array 2 vezes dentro da constante 
+//a constante tem os mesmo elementos do array de pokemonsImages, porém eles estão espalhados.
+//e no lugar da constante pokemonsImages eu substituo pela nova constante com o array duplicado
+//porém eles estão na mesma ordem, para consertar isso utilizei o método sort para embaralhar o array, ele ordena em ordem alfabética, porém ele também recebe uma função dentro dele para determinar como quero essa ordenação
+//utilizei o metodo Match.random como retorno para função do sort, pois ele gera um número aletório, subtrai por 0.5 para que ele não fique sempre com o mesmo padrão, pois o sort precisa receber um número maior ou menor que 0
+
+
+const loadGame = () => {
+    const duplicatePokemons = [...pokemonsImages, ...pokemonsImages].sort(()=>{
+        return Math.random() - 0.5
+    }) 
+
+    duplicatePokemons.forEach((pokemon)=>{
+       const card = createCard(pokemon);
+       grid.appendChild(card);
+    });
+   }
+   loadGame()
