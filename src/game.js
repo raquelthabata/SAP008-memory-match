@@ -1,6 +1,24 @@
 
-import pokemon from './data/pokemon/pokemon.js';
 import data from './data/pokemon/pokemon.js'
+//0: primeiro importei as informações do arquivo data
+//criei uma função para gerar a imagem de dentro do objeto, através do forEach que percorre cada objeto do array. 
+//passei um objeto como parametro, dentro da função criei uma constante que recebeu um array vazio.
+//passei um forEach no objeto que recebe items como parametro e através do método push, a constante com array vazio puxa os dados de items.image 
+//por fim retorna a constante que recebe um array com todas url das imagens
+
+
+const gerarImg = (objeto)=>{
+    const imgItems = [];
+    objeto.forEach((items)=>{
+        imgItems.push(items.image)
+
+    })
+
+    return imgItems;
+}
+
+const pokemonsImages = gerarImg(data.items)
+//criei uma constante para guardar o resultado das imagens que veio através da execução da função
 
 //1: a gente precisa criar toda a estrutura doq está no html para aparecer nossa carta, quem vai criar essa estrutura é função que irei criar
  /*
@@ -63,22 +81,7 @@ const createElements = (tag, nameOfClass)=>{
 
  //1.4 agora reaproveitando a função de criar elemento para a função de criar o card, ela ficará assim:
 
- const pokemons = data.items;
-
-
-const gerarImg = (objeto)=>{
-    const imgItems = [];
-    objeto.forEach((objeto)=>{
-        imgItems.push(objeto.image)
-
-    })
-
-    return imgItems;
-}
-
-const pokemonsImages = gerarImg(pokemons)
-
-const createCard = (pokemon) => {
+ const createCard = (pokemon) => {
     const card = createElements('div', 'card');
     const front = createElements('div', ' face front');
     const back = createElements('div', ' face back');
