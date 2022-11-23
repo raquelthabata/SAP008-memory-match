@@ -1,4 +1,4 @@
-/*main{
+main{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -20,7 +20,7 @@ header{
     border-radius: 5px;
     border: solid 1px rgb(16, 167, 255);}
 
-*/
+
 .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
