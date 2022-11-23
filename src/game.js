@@ -20,7 +20,7 @@ const gerarImg = (objeto) => {
 const pokemonsImages = gerarImg(data.items)
 //criei uma constante para guardar o resultado das imagens que veio através da execução da função
 
-//1: a gente precisa criar toda a estrutura doq está no html para aparecer nossa carta, quem vai criar essa estrutura é função que irei criar
+//1: preciso criar toda a estrutura doq está no html para aparecer nossa carta, quem vai criar essa estrutura é função que irei criar
 /*
 <div class="grid">
      <div class="card">
@@ -88,6 +88,7 @@ const createElements = (tag, nameOfClass) => {
 let firstCard = '';
 let secondCard = '';
 
+
 const revealCard = ({ target }) => {
     if (target.parentNode.className.includes('reveal-card')) {
         return; //se o target já tiver uma classe com o nome reveal-card ele vai bater no return e vai pro fim da função, não vai fazer nada
@@ -100,9 +101,22 @@ const revealCard = ({ target }) => {
     else if (secondCard === '') {
         target.parentNode.classList.add('reveal-card')
         secondCard = target.parentNode;
+
+        const firstPoke = firstCard.getAttribute('name');
+        const secondPoke = secondCard.getAttribute('name');
+
+        if (secondPoke === firstPoke) {
+
+            firstCard.classList.add('disabled-card');
+            secondCard.classList.add('disabled-card');
+            firstCard = '';
+            secondCard = '';
+        }
+
     } //mesma coisa aqui
 
-     
+
+    //como comparar as duas cartas para aplicar a classe disabled-card se as duas forem iguais?
 
 
 
@@ -111,9 +125,12 @@ const revealCard = ({ target }) => {
 const createCard = (pokemon) => {
     const card = createElements('div', 'card');
     const front = createElements('div', ' face front');
-    const back = createElements('div', ' face back');
+    const back = createElements('div', ' back');
 
-    front.style.backgroundImage = `url(${pokemon})`;
+    card.setAttribute('name', pokemon.id)
+
+
+    front.style.backgroundImage = `url(${pokemon.image})`;
 
     card.appendChild(front);
     card.appendChild(back);
@@ -158,7 +175,7 @@ loadGame() */
 
 
 const loadGame = () => {
-    const duplicatePokemons = [...pokemonsImages, ...pokemonsImages].sort(() => {
+    const duplicatePokemons = [...data.items, ...data.items].sort(() => {
         return Math.random() - 0.5
     })
 
