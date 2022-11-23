@@ -107,12 +107,16 @@ const revealCard = ({ target }) => {
 
         if (secondPoke === firstPoke) {
 
-            firstCard.classList.add('disabled-card');
-            secondCard.classList.add('disabled-card');
+            firstCard.firstChild.classList.add('disabled-card');
+            secondCard.firstChild.classList.add('disabled-card');
+            firstCard = '';
+            secondCard = '';
+        } else {
+            firstCard.classList.remove('reveal-card');
+            secondCard.classList.remove('reveal-card');
             firstCard = '';
             secondCard = '';
         }
-
     } //mesma coisa aqui
 
 
@@ -125,7 +129,7 @@ const revealCard = ({ target }) => {
 const createCard = (pokemon) => {
     const card = createElements('div', 'card');
     const front = createElements('div', ' face front');
-    const back = createElements('div', ' back');
+    const back = createElements('div', ' face back');
 
     card.setAttribute('name', pokemon.id)
 
