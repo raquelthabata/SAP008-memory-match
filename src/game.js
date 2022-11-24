@@ -116,7 +116,7 @@ const revealCard = ({ target }) => {
             secondCard.classList.remove('reveal-card');
             firstCard = '';
             secondCard = '';
-        }
+        } 
     } //mesma coisa aqui
 
 
