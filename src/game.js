@@ -111,11 +111,13 @@ const revealCard = ({ target }) => {
             secondCard.firstChild.classList.add('disabled-card');
             firstCard = '';
             secondCard = '';
-        } else {
+        } else {setTimeout(()=>{
             firstCard.classList.remove('reveal-card');
             secondCard.classList.remove('reveal-card');
             firstCard = '';
             secondCard = '';
+        },600)
+           
         } 
     } //mesma coisa aqui
 
