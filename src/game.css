@@ -1,14 +1,19 @@
-main{
+body {
+    background: linear-gradient(179.89deg, #F1DF61 0.09%, rgba(233, 41, 41, 0.98) 48.53%, rgba(12, 40, 189, 0.42) 99.91%);
+}
+
+main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background:linear-gradient(179.89deg, #F1DF61 0.09%, rgba(233, 41, 41, 0.98) 48.53%, rgba(12, 40, 189, 0.42) 99.91%);
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
     padding: 20px 20px 120px;
+
 }
 
-header{
+header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,7 +23,8 @@ header{
     margin: 0 0 30px;
     padding: 20px;
     border-radius: 5px;
-    border: solid 1px rgb(16, 167, 255);}
+    border: solid 1px rgb(16, 167, 255);
+}
 
 
 .grid {
@@ -38,7 +44,7 @@ header{
     transition: all 400ms ease;
     transform-style: preserve-3d;
     background-color: blueviolet;
-    
+
 }
 
 .face {
@@ -56,18 +62,17 @@ header{
     background-color: blueviolet;
     transform: rotateY(180deg);
 }
-/*o transform: rotateY(180deg) foi aplicado aqui pq a imagem está invertida, para ficar na posição correta, sem espelhamento*/
 
 .back {
-   background-image: url(/SAP008-memory-match/src/imagens/back.jpg);
+    background-image: url(/SAP008-memory-match/src/imagens/back.jpg);
     backface-visibility: hidden;
 }
 
-.reveal-card{
+.reveal-card {
     transform: rotateY(180deg);
 }
 
-.disabled-card{
-    filter:saturate(0.5);
+.disabled-card {
+    filter: saturate(0.5);
     opacity: 0.5;
 }
