@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'poke';
+    src: url(/SAP008-memory-match/src/fonts/Pokemon\ Classic.ttf) format('truetype');
+}
+
 body {
     background: linear-gradient(179.89deg, #F1DF61 0.09%, rgba(233, 41, 41, 0.98) 48.53%, rgba(12, 40, 189, 0.42) 99.91%);
 }
@@ -16,7 +21,6 @@ main {
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
     max-width: 800px;
     background-color: rgba(255, 255, 255, 0.466);
@@ -24,6 +28,19 @@ header {
     padding: 20px;
     border-radius: 5px;
     border: solid 1px rgb(16, 167, 255);
+    justify-content: space-between;
+}
+
+span{
+    font-size: 16px;
+    color: #0065be;
+    font-family:poke;
+}
+
+.material-icons{
+text-decoration: none;
+color: #337EBE;
+font-size: 35px !important;
 }
 
 
@@ -43,7 +60,6 @@ header {
     position: relative;
     transition: all 400ms ease;
     transform-style: preserve-3d;
-    background-color: blueviolet;
 
 }
 
@@ -59,7 +75,7 @@ header {
 }
 
 .front {
-    background-color: blueviolet;
+    background-color:  #337EBE;
     transform: rotateY(180deg);
 }
 
