@@ -5,6 +5,7 @@ const spanPlayer = document.querySelector('.player');
 
 const grid = document.querySelector('.grid');
 
+
 const createElements = (tag, nameOfClass) => {
     const element = document.createElement(tag);
     element.className = nameOfClass;
@@ -14,6 +15,15 @@ const createElements = (tag, nameOfClass) => {
 let firstCard = '';
 let secondCard = '';
 
+const checkEndGame = () =>{
+    const disabledCard = document.querySelectorAll('.disabled-card');
+    if (disabledCard.length === 18){
+        clearTimeout(timer)
+        setTimeout(()=>{alert('acabou'),4000}) 
+    }
+    
+    
+    }
 
 const revealCard = ({ target }) => {
     if (target.parentNode.className.includes('reveal-card')) {
@@ -37,6 +47,7 @@ const revealCard = ({ target }) => {
             secondCard.firstChild.classList.add('disabled-card');
             firstCard = '';
             secondCard = '';
+            checkEndGame()
         } else {
             setTimeout(() => {
                 firstCard.classList.remove('reveal-card');
@@ -52,7 +63,7 @@ const revealCard = ({ target }) => {
 const createCard = (pokemon) => {
     const card = createElements('div', 'card');
     const front = createElements('div', ' face front');
-    const back = createElements('div', ' face back');
+    const back = createElements('div', ' back');
 
     card.setAttribute('name', pokemon.id);
 
@@ -79,8 +90,41 @@ const loadGame = () => {
     });
 };
 
+
+
+var hh = 0;
+var mm = 0;
+var ss = 0;
+
+var tempo = 1000;
+var cron;
+
+
+function timer() {
+    ss++; 
+
+    if (ss == 60) { 
+        ss = 0; 
+        mm++; 
+
+        if (mm == 60) {
+            mm = 0;
+            hh++;
+        }
+    }
+
+    var format = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (ss < 10 ? '0' + ss : ss);
+    
+    document.querySelector('.timer').innerText = format;
+
+    return format;
+}
+
+
 window.onload = () => {
     const playerName = localStorage.getItem('player');
     spanPlayer.innerHTML =`Player: ${playerName}`;
+    cron = setInterval(() => { timer(); }, tempo);
     loadGame()
+   
 };
