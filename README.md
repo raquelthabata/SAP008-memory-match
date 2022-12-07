@@ -46,9 +46,12 @@ Para o desenvolvimento do jogo utilizei JavaScript puro, HTML e CSS, possibilita
 
 ## Futuras implementações
 Adicionar novos conjuntos de cartas.
+
 Calcular a pontuação baseado na quantidade de turnos.
+
 100% Coverage
 
-Pode acessar a aplicação através desse link [link](inserir link "link")
+
+Pode desfrutar da aplicação através desse link [link](inserir link "link") ;D
 
 Este jogo foi desenvolvido por Raquel thabata, da turma SP008 de laboratória Brasil.
