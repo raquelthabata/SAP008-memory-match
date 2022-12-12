@@ -1,8 +1,8 @@
 # PokeMemory
 
 ## Índice
-* [Introdução](#Introdução)
-* [Usuários](#Usuários)
+* [Introdução](#introdução)
+* [Usuários](#usuários)
 * [Interface do usuário](#interface-do-usuário)
 * [Desenvolvimento do jogo](#desenvolvimento-do-jogo)
 
@@ -27,20 +27,31 @@ Por fim, com os feedbacks captados e pesquisa de usuário finalizada, cheguei ao
 
 ## Desenvolvimento do jogo 
 Para o desenvolvimento do jogo utilizei JavaScript puro, HTML e CSS, possibilitando as seguintes implementações: 
-1.Embaralhar as cartas e mostrá-las na interface.
-2.Permitir o usuário virar as cartas de 2 em 2.
-3.Os pares encontrados devem permanecer viradas para cima.
-4.Indicar ao usuário que ganhou quando conseguir virar todas as cartas.
-5.Ser responsiva, ou seja, deve ser visualizada sem problemas a partir de diversos tamanhos de tela: celulares, tablets e desktops.
-6.Cronômetro do jogo.
-7.Possibilidade de identificar o nome do jogador.
-8.Retornar a home ou reiniciar o jogo de maneira fácil.
+
+1. Embaralhar as cartas e mostrá-las na interface.
+
+2. Permitir o usuário virar as cartas de 2 em 2.
+
+3. Os pares encontrados devem permanecer viradas para cima.
+
+4. Indicar ao usuário que ganhou quando conseguir virar todas as cartas.
+
+5. Ser responsiva, ou seja, deve ser visualizada sem problemas a partir de diversos tamanhos de tela: celulares, tablets e desktops.
+6. Cronômetro do jogo.
+
+7. Possibilidade de identificar o nome do jogador.
+
+8. Retornar a home ou reiniciar o jogo de maneira fácil.
+
 
 ## Futuras implementações
 Adicionar novos conjuntos de cartas.
+
 Calcular a pontuação baseado na quantidade de turnos.
+
 100% Coverage
 
-Pode acessar a aplicação através desse link [link](inserir link "link")
+
+Pode desfrutar da aplicação através desse link [link](inserir link "link") ;D
 
 Este jogo foi desenvolvido por Raquel thabata, da turma SP008 de laboratória Brasil.
